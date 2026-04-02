@@ -1,0 +1,171 @@
+---
+import BaseLayout from "../components/layout/base-layout.astro";
+import SectionHeader from "../components/ui/section-header.astro";
+import Card from "../components/ui/card.astro";
+import Stat from "../components/ui/stat.astro";
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="hero container">
+    <h1 class="hero-name animate-in" style="--stagger: 0">Anthony Lupo</h1>
+    <p class="hero-subtitle animate-in" style="--stagger: 1">
+      Strategic Account Executive. AI-fluent operator. Builder of systems.
+    </p>
+    <div class="hero-cta animate-in" style="--stagger: 2">
+      <a href="/work" class="cta-link">View work <span aria-hidden="true">&rarr;</span></a>
+      <a href="/contact" class="cta-link">Get in touch <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </section>
+
+  <!-- Selected Work -->
+  <section class="container section">
+    <SectionHeader
+      overline="Selected Work"
+      title="Things I've built and sold"
+      subtitle="From $558K enterprise deals to AI tools adopted org-wide."
+    />
+
+    <div class="work-grid">
+      <Card
+        title="Good Feet Worldwide"
+        description="$558K multi-year platform deal. Mystery-shopped the customer journey, turned it into a strategic audit that landed me in their franchise presentation."
+        tags={["enterprise-sales", "customer-journey", "platform-displacement"]}
+        href="/work/good-feet"
+        stagger={3}
+      />
+      <Card
+        title="LupoGPT"
+        description="AI prospecting tool built at Yext and pitched to the sales org. Became an internal resource adopted by the broader team."
+        tags={["ai-tools", "sales-ops", "internal-product"]}
+        href="/work/lupogpt"
+        stagger={4}
+      />
+      <Card
+        title="BumperDoc"
+        description="First consulting engagement. SEO, marketing strategy, and web design for an auto body shop in Santee."
+        tags={["consulting", "seo", "web-design"]}
+        href="/work/bumper-doc"
+        stagger={5}
+      />
+      <Card
+        title="This Portfolio"
+        description="Built with Claude Code and Astro. A case study in AI-assisted development, shipping a production site through pair programming with AI."
+        tags={["astro", "claude-code", "design-engineering"]}
+        href="/work/portfolio"
+        stagger={6}
+      />
+    </div>
+  </section>
+
+  <!-- Proof Points -->
+  <section class="container section">
+    <SectionHeader
+      overline="Track Record"
+      title="Numbers that matter"
+    />
+
+    <div class="stats-grid">
+      <Stat value="245%" label="Peak quarter" />
+      <Stat value="$558K" label="Largest deal" />
+      <Stat value="8+" label="Years B2B SaaS" />
+      <Stat value="40%" label="Close rate" />
+    </div>
+  </section>
+
+  <!-- Current Focus -->
+  <section class="container section">
+    <div class="focus-block">
+      <p class="focus-text">
+        Eight years of enterprise sales across Salesforce, Samsara, and Yext.
+        I've closed platform deals, built AI tools, and learned that the best
+        sellers are the ones who actually understand what they're selling.
+        Looking for my next chapter at an AI-forward company where technical
+        curiosity and sales instinct come together.
+      </p>
+      <div class="focus-links">
+        <a href="/about" class="cta-link">Read the full story <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-24);
+  }
+
+  .hero-name {
+    margin: 0;
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    margin-top: var(--space-4);
+    max-width: 50ch;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .cta-link {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .cta-link:hover {
+    color: var(--accent);
+  }
+
+  .section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 768px) {
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+  }
+
+  .focus-block {
+    max-width: var(--content-width);
+  }
+
+  .focus-text {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .focus-links {
+    margin-top: var(--space-6);
+  }
+</style>

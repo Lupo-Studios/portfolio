@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../components/layout/base-layout.astro";
+import SectionHeader from "../components/ui/section-header.astro";
+---
+
+<BaseLayout title="Contact — Anthony Lupo" description="Get in touch.">
+  <section class="container page">
+    <SectionHeader
+      overline="Contact"
+      title="Let's talk"
+      subtitle="Open to conversations about roles, projects, and collaboration."
+    />
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:anthonylupo23@gmail.com" class="contact-value">anthonylupo23@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Location</span>
+          <span class="contact-value-text">San Diego, CA</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Social</span>
+          <div class="social-links">
+            <a href="https://x.com/humanlup" target="_blank" rel="noopener noreferrer">X &nearr;</a>
+            <a href="https://linkedin.com/in/anthonylupo" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
+            <a href="https://github.com/Lupo-Studios" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-16);
+  }
+
+  .contact-grid {
+    max-width: var(--content-width);
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .contact-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .contact-value {
+    font-size: var(--text-lg);
+    color: var(--text-primary);
+  }
+
+  .contact-value-text {
+    font-size: var(--text-lg);
+    color: var(--text-primary);
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--space-6);
+  }
+
+  .social-links a {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .social-links a:hover {
+    color: var(--accent);
+  }
+</style>

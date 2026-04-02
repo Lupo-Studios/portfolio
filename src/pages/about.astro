@@ -1,0 +1,110 @@
+---
+import BaseLayout from "../components/layout/base-layout.astro";
+import SectionHeader from "../components/ui/section-header.astro";
+import Stat from "../components/ui/stat.astro";
+---
+
+<BaseLayout title="About — Anthony Lupo" description="Eight years of B2B SaaS sales, AI tools, and building systems.">
+  <section class="container page">
+    <SectionHeader
+      overline="About"
+      title="The full story"
+    />
+
+    <div class="narrative prose-width">
+      <p class="lead">
+        I'm a customer-focused professional who lives at the intersection of sales,
+        technical thinking, and genuine curiosity. Over eight years in B2B SaaS I've
+        learned that the best deals come from actually understanding what a customer
+        is trying to solve, not just what they say they want to buy.
+      </p>
+
+      <h3>Salesforce (2015-2019)</h3>
+      <p>
+        Salesforce is where I learned how to sell. Started as an SDR and led the
+        org of 43 in ACV eight out of eleven months. Moved into Enterprise
+        Business Development focused on Oil and Gas, hitting 130% attainment.
+        Then into an AE role with Health Cloud.
+      </p>
+
+      <h3>Samsara (2019-2020)</h3>
+      <p>
+        The hardest professional experience I've had, and one of the most important.
+        Put on a PIP within my first months. Hit 250% of quota during the PIP.
+        Drove 300% ARR growth year over year through a strategic shift to mid-enterprise.
+      </p>
+
+      <h3>Yext (2020-2025)</h3>
+      <p>
+        Five years is where I figured out what kind of seller I actually am. Came in
+        as a mid-market AE and left as a Principal AE managing 15 accounts at $700M
+        to $1B ARR each. Hit Presidents Club, mentored 5 reps, posted a 245% quarter,
+        and built systems the broader team adopted.
+      </p>
+
+      <h3>What I'm after</h3>
+      <p>
+        A role where sales experience, technical curiosity, and the ability to simplify
+        complexity come together. Ideally at an AI-forward company building something
+        ambitious.
+      </p>
+    </div>
+
+    <div class="stats-section">
+      <div class="stats-grid">
+        <Stat value="245%" label="Peak quarter (Yext Q2)" />
+        <Stat value="$558K" label="Largest deal (Good Feet)" />
+        <Stat value="130%" label="Enterprise BDR attainment" />
+        <Stat value="#1" label="SDR ACV rank (8/11 months)" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-16);
+  }
+
+  .narrative {
+    margin-bottom: var(--space-16);
+  }
+
+  .lead {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-8);
+  }
+
+  .narrative h3 {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+    font-weight: 400;
+    font-size: var(--text-xl);
+  }
+
+  .narrative p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .stats-section {
+    padding-top: var(--space-12);
+    border-top: 1px solid var(--border-default);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+  }
+</style>

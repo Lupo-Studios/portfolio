@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../components/layout/base-layout.astro";
+import SectionHeader from "../../components/ui/section-header.astro";
+import Card from "../../components/ui/card.astro";
+---
+
+<BaseLayout title="Work — Anthony Lupo" description="Selected projects and case studies.">
+  <section class="container page">
+    <SectionHeader
+      overline="Work"
+      title="Projects & case studies"
+      subtitle="Enterprise deals, AI tools, and consulting work."
+    />
+
+    <div class="work-grid">
+      <Card
+        title="Good Feet Worldwide"
+        description="$558K multi-year platform deal. Mystery-shopped the customer journey, turned it into a strategic audit that landed me in their franchise presentation."
+        tags={["enterprise-sales", "customer-journey", "platform-displacement"]}
+        href="/work/good-feet"
+        stagger={0}
+      />
+      <Card
+        title="LupoGPT"
+        description="AI prospecting tool built at Yext and pitched to the sales org. Became an internal resource adopted by the broader team."
+        tags={["ai-tools", "sales-ops", "internal-product"]}
+        href="/work/lupogpt"
+        stagger={1}
+      />
+      <Card
+        title="BumperDoc"
+        description="First consulting engagement. SEO, marketing strategy, and web design for an auto body shop in Santee."
+        tags={["consulting", "seo", "web-design"]}
+        href="/work/bumper-doc"
+        stagger={2}
+      />
+      <Card
+        title="This Portfolio"
+        description="Built with Claude Code and Astro. A case study in AI-assisted development, shipping a production site through pair programming with AI."
+        tags={["astro", "claude-code", "design-engineering"]}
+        href="/work/portfolio"
+        stagger={3}
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-16);
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 768px) {
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
