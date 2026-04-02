@@ -1,0 +1,120 @@
+---
+import { NAV_ITEMS, SITE } from "../../lib/constants";
+import ThemeToggle from "../ui/theme-toggle.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header glass">
+  <nav class="container nav" aria-label="Main navigation">
+    <a href="/" class="logo" aria-label={`${SITE.name} home`}>
+      <span class="logo-text">Lupo</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      {
+        NAV_ITEMS.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                "nav-link",
+                { active: currentPath.startsWith(item.href) },
+              ]}
+              aria-current={
+                currentPath.startsWith(item.href) ? "page" : undefined
+              }
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="nav-actions">
+      <ThemeToggle />
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .logo {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .logo:hover {
+    color: var(--text-primary);
+  }
+
+  .logo-text {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: var(--text-lg);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-8);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-link {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: var(--space-2) 0;
+    position: relative;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+  }
+
+  .nav-link.active {
+    color: var(--text-primary);
+  }
+
+  /* DESIGN: Active indicator — bottom border, not background */
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--text-primary);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Responsive: hide nav links on mobile, show hamburger later */
+  @media (max-width: 640px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
